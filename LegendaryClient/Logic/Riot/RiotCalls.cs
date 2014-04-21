@@ -362,10 +362,15 @@ namespace LegendaryClient.Logic.Riot
         /// </summary>
         /// <param name="PlayerSkill">The skill of the player</param>
         /// <returns></returns>
+        
+        /*
+
         public static Task<Object> ProcessELOQuestionaire(PlayerSkill PlayerSkill)
         {
             return InvokeAsync<Object>("playerStatsService", "processEloQuestionaire", PlayerSkill.ToString());
         }
+        */
+
 
         /// <summary>
         /// Gets the player reroll balance

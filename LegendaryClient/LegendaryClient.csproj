@@ -67,8 +67,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MahApps.Metro">
-      <HintPath>..\packages\MahApps.Metro.0.10.1.1\lib\net45\MahApps.Metro.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\LegendaryClient-28d1ed8941b14b1bb813e809a282fde015a1b184\LegendaryClient\bin\Release\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="rtmp-sharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

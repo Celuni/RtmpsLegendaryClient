@@ -15,6 +15,8 @@ namespace LegendaryClient.Windows
     /// <summary>
     /// Interaction logic for PlayPage.xaml
     /// </summary>
+    
+    //lookes like I broke this
     public partial class PlayPage : Page
     {
         private int i = 10;

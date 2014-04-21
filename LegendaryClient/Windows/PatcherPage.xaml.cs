@@ -28,7 +28,7 @@ namespace LegendaryClient.Windows
 
         private void SkipPatchButton_Click(object sender, RoutedEventArgs e)
         {
-            FinishPatching(true);
+            Client.SwitchPage(new LoginPage());
         }
 
         private void StartPatcher()
@@ -125,8 +125,10 @@ namespace LegendaryClient.Windows
                 if (!DDragonDownloadURL.StartsWith("http:"))
                     DDragonDownloadURL = "http:" + DDragonDownloadURL;
                 LogTextBox("DataDragon Version: " + patcher.DDragonVersion);
+                Client.Version = patcher.DDragonVersion;
                 string DDragonVersion = File.ReadAllText(Path.Combine(Client.ExecutingDirectory, "Assets", "VERSION_DDragon"));
                 LogTextBox("Current DataDragon Version: " + DDragonVersion);
+                //if DDragonVersion  { LogTextBox("First Patch, This will take some time") }
                 Client.Log("DD: " + patcher.DDragonVersion + "|" + DDragonVersion);
 
                 if (patcher.DDragonVersion != DDragonVersion)
@@ -307,11 +309,12 @@ namespace LegendaryClient.Windows
 
         private void FinishPatching(bool Force = false)
         {
-            if (Force)
-                bgThread.Abort();
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
-                Client.SwitchPage(new LoginPage());
+                SkipPatchButton.IsEnabled = true;
+                SkipPatchButton.Content = "PLAY";
+                TotalProgressLabel.Content = "100%";
+                TotalProgessBar.Value = 100;
             }));
         }
 
